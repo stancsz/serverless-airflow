@@ -1,0 +1,35 @@
+# Python files
+*.pyc
+*.pyo
+*.egg
+*.egg-info
+__pycache__
+
+# Virtual environment
+venv/
+*.venv
+.env
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+
+# Logs
+logs/
+
+# Flask
+instance/
+.webassets-cache
+
+# Airflow
+airflow.cfg
+airflow-webserver.pid
+airflow/logs/
+
+# Databases
+*.sqlite
+
+# OS generated files
+.DS_Store
+Thumbs.db

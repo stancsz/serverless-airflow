@@ -1,0 +1,19 @@
+dag_id: example_dag
+schedule_interval: '0 0 * * *'
+default_args:
+  owner: airflow
+  depends_on_past: false
+  email_on_failure: false
+  email_on_retry: false
+  retries: 1
+  retry_delay: 300 # in seconds
+tasks:
+  - task_id: start
+    operator: DummyOperator
+  - task_id: task_1
+    operator: PythonOperator
+    python_callable: my_function
+    upstream_tasks: [start]
+  - task_id: end
+    operator: DummyOperator
+    upstream_tasks: [task_1]
